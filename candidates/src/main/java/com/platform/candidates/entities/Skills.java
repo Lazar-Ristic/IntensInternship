@@ -1,4 +1,4 @@
-package com.platform.entities;
+package com.platform.candidates.entities;
 
 import java.util.ArrayList;
 import java.util.List;

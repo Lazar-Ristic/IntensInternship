@@ -1,4 +1,4 @@
-package com.platform.entities;
+package com.platform.candidates.entities;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -16,7 +16,6 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 
 @Entity
-
 @Table(name = "candidate")
 public class Candidate {
 	@Id
@@ -71,6 +70,4 @@ public class Candidate {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	
 }

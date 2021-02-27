@@ -1,11 +1,11 @@
-package com.platform.repository;
+package com.platform.candidates.repository;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import com.platform.entities.Candidate;
+import com.platform.candidates.entities.Candidate;
 
 public interface CandidateRepo extends JpaRepository<Candidate, Long> {
 
