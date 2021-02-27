@@ -6,9 +6,12 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
@@ -31,7 +34,10 @@ public class Candidate {
 	@Column
 	private String email;
 	@Column
-	@ManyToMany(mappedBy="candidateList")
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(name = "CANDIDATE_SKILLS", joinColumns = {
+			@JoinColumn(name = "CANDIDATE", nullable = false, updatable = true) }, inverseJoinColumns = {
+					@JoinColumn(name = "SKILL", nullable = false, updatable = true) })
 	private List<Skills> skillList = new ArrayList<Skills>();
 	
 	public Long getId() {

@@ -13,4 +13,5 @@ public interface CandidateRepo extends JpaRepository<Candidate, Long> {
 	
 	@Query("select cr from Candidate cr where cr.name=:name")
 	public Candidate findByName(String name);
+
 }

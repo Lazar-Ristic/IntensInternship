@@ -9,6 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
@@ -22,9 +23,19 @@ public class Skills {
 	private Long id;
 	@Column
 	private String skillName;
-	@ManyToMany(fetch=FetchType.LAZY)
-	@JoinTable
+	
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(name = "CANDIDATE_SKILLS", joinColumns = {
+			@JoinColumn(name = "SKILL", nullable = false, updatable = true) }, inverseJoinColumns = {
+					@JoinColumn(name = "CANDIDATE", nullable = false, updatable = true) })
 	private List<Candidate> candidateList = new ArrayList<>();
+	
+	public List<Candidate> getCandidateList() {
+		return candidateList;
+	}
+	public void setCandidateList(List<Candidate> candidateList) {
+		this.candidateList = candidateList;
+	}
 	
 	public Long getId() {
 		return id;
