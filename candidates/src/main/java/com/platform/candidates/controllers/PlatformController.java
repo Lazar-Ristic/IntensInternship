@@ -84,5 +84,4 @@ public class PlatformController {
 		List<Candidate> candidateList = candidateService.findBySkill(skillId);
 		return new ResponseEntity<Object>(candidateList, HttpStatus.OK);
 	}
-
 }

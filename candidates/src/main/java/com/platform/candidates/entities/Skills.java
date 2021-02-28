@@ -87,8 +87,5 @@ public class Skills {
 		} else if (!skillName.equals(other.skillName))
 			return false;
 		return true;
-	}
-	
-	
-	
+	}	
 }

@@ -19,6 +19,4 @@ public interface CandidateRepo extends JpaRepository<Candidate, Long> {
 	public Optional<Candidate> findById(Long id);
 	
 	public List<Candidate> findByName(String name);
-
-
 }

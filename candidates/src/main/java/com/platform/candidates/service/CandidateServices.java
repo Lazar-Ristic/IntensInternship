@@ -77,7 +77,6 @@ public class CandidateServices {
 		}
 		
 	}
-
 	
 	public List<Candidate> findBySkill(Long skillId) {
 		List<Candidate> candidateList = skillRepo.findCandidatesBySkill(skillId);

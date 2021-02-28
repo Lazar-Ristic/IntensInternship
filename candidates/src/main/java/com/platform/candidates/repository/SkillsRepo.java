@@ -12,5 +12,4 @@ public interface SkillsRepo extends JpaRepository<Skills, Long> {
 
 	@Query("select sk.candidateList from Skills sk where sk.id = :skillId")
 	List<Candidate> findCandidatesBySkill(Long skillId);
-
 }
